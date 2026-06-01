@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>お問い合わせ｜コレ買い！</title>
+<meta name="description" content="商品の予約・取扱、生産者・自治体のご相談、取材・メディアなど。お気軽にお問い合わせください。" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a href="index.html" class="brand" aria-label="コレ買い！ ホーム">
+      <span class="brand__seal">買</span>
+      <span class="brand__name">コレ買い<span class="ex">！</span></span>
+    </a>
+    <nav class="nav" aria-label="メインナビ">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">私たち</a>
+      <a href="method.html">仕組み</a>
+      <a href="products.html">取扱事例</a>
+      <a href="producers.html">生産者の方へ</a>
+    </nav>
+    <a href="contact.html" class="btn btn--shu hdr__cta is-active">お問い合わせ</a>
+    <button class="burger" id="burger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile" id="mobile" aria-label="モバイルナビ">
+    <a href="index.html">ホーム</a>
+    <a href="about.html">私たち</a>
+    <a href="method.html">仕組み</a>
+    <a href="products.html">取扱事例</a>
+    <a href="producers.html">生産者の方へ</a>
+    <a href="contact.html" class="btn btn--shu">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="phead">
+    <div class="wrap">
+      <p class="eyebrow rv">Contact <span class="jp">お問い合わせ</span></p>
+      <h1 class="h-sec rv d1">お話、聞かせてください。</h1>
+      <p class="lead rv d2">商品の予約・取扱、生産者・自治体のご相談、取材・メディアまで。通常2〜3日以内にお返事します。<br>直接のご連絡は <a href="mailto:fuga.n.0201@gmail.com" style="color:var(--shu);text-decoration:underline;font-weight:700">fuga.n.0201@gmail.com</a> へ。</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div id="formArea" class="rv">
+        <form class="form" id="cform" novalidate>
+          <div class="field">
+            <label>ご用件 <span class="req">*</span></label>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="topic" value="product" required /><span>商品の予約・取扱について</span></label>
+              <label class="radio"><input type="radio" name="topic" value="producer" /><span>生産者・自治体としての相談</span></label>
+              <label class="radio"><input type="radio" name="topic" value="press" /><span>取材・メディア・コラボ</span></label>
+              <label class="radio"><input type="radio" name="topic" value="other" /><span>その他</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="nm">お名前 <span class="req">*</span></label>
+            <input id="nm" type="text" required placeholder="山田 太郎" />
+          </div>
+
+          <div class="field">
+            <label for="em">メールアドレス <span class="req">*</span></label>
+            <input id="em" type="email" required placeholder="example@email.com" />
+          </div>
+
+          <div class="field">
+            <label for="org">会社名・団体名・自治体名</label>
+            <input id="org" type="text" placeholder="（任意）" />
+          </div>
+
+          <div class="field">
+            <label for="msg">お問い合わせ内容 <span class="req">*</span></label>
+            <textarea id="msg" required placeholder="お気軽にご記入ください。"></textarea>
+          </div>
+
+          <label class="consent"><input type="checkbox" required /><span>個人情報を、お問い合わせへの返信の目的で利用することに同意します。</span></label>
+
+          <div>
+            <button type="submit" class="btn btn--shu">送信する <span class="arw">→</span></button>
+            <p class="form__note">※「送信する」を押すと、お使いのメールソフトが開き <b>fuga.n.0201@gmail.com</b> 宛に入力内容が入ります。そのまま送信してください。</p>
+          </div>
+        </form>
+
+        <div class="callout" style="margin-top:44px;margin-bottom:0">
+          <span class="seal" style="font-size:15px">i</span>
+          <span>商品のご購入は<b>予約の取り次ぎ（取次型＝FAX／振込でのやりとり）</b>で承ります。当サイトでオンライン決済は行いません。継続取引・売上保証の確約はしておりません。</span>
+        </div>
+      </div>
+
+      <div id="sent" class="sent" style="display:none">
+        <span class="seal">買</span>
+        <h3>送信、ありがとうございます。</h3>
+        <p>内容を確認のうえ、担当よりご連絡します。<br>通常2〜3日以内にお返事いたします。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__top">
+      <div class="ft__brand">
+        <div class="row"><span class="brand__seal">買</span><span class="nm">コレ買い<span class="ex">！</span></span></div>
+        <p class="mi">地域の隠れた逸品を、首都圏で「売れる」へ。</p>
+        <dl class="ft__entity">
+          <dt>団体</dt><dd>複数大学の学生による団体（2026.01発足）</dd>
+          <dt>代表</dt><dd>野口 拓朗（慶應義塾大学）</dd>
+          <dt>拠点</dt><dd>慶應義塾大学 日吉キャンパス</dd>
+          <dt>連絡</dt><dd><a href="mailto:fuga.n.0201@gmail.com" style="text-decoration:underline">fuga.n.0201@gmail.com</a></dd>
+        </dl>
+      </div>
+      <nav class="ft__col">
+        <h4>About</h4>
+        <a href="about.html">私たち</a>
+        <a href="method.html">仕組み</a>
+        <a href="products.html">取扱事例</a>
+      </nav>
+      <nav class="ft__col">
+        <h4>Contact</h4>
+        <a href="producers.html">生産者・自治体の方へ</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="contact.html">取材・メディア</a>
+      </nav>
+    </div>
+    <p class="ft__notice">本サイトは商品の予約取次・お問い合わせの窓口です。オンライン決済は行っていません。継続取引・売上保証の確約はしておりません。掲載商品の原材料・アレルゲン・賞味期限・保存方法は、予約取次の際に生産者ラベル原本でご確認いただきます。</p>
+    <p class="ft__copy">© 2026 KOREKAI — Retail × Market Research for Regional Products.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
