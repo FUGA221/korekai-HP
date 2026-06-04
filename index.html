@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=20260604j">
+<link rel="stylesheet" href="style.css?v=20260604k">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -78,9 +78,10 @@
 .cz-3 .it p{margin-top:10px;font-size:13px;color:rgba(255,255,255,.85);line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
 
 /* 最初の都市接点（メッセージ主導／EC化率は補足ノート扱い・wine） */
-.cz-touch{display:grid;grid-template-columns:1.55fr .9fr;gap:clamp(26px,4vw,54px);align-items:start}
-.cz-touch__body p{color:rgba(255,255,255,.9);font-size:clamp(14.5px,1.6vw,16px);line-height:1.98;word-break:keep-all;line-break:strict;overflow-wrap:normal}
-.cz-touch__body p+p{margin-top:16px}
+.cz-touch{display:block}
+.cz-touch__top{display:grid;grid-template-columns:1.55fr .9fr;gap:clamp(26px,4vw,54px);align-items:start}
+.cz-touch__lead p{color:rgba(255,255,255,.9);font-size:clamp(14.5px,1.6vw,16px);line-height:1.98;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__lead p+p{margin-top:16px}
 .cz-touch__key{margin-top:24px;padding-left:18px;border-left:3px solid var(--gold);font-family:var(--f-disp);font-weight:800;font-size:clamp(16px,1.95vw,20px);line-height:1.72;color:#fff!important;word-break:keep-all;line-break:strict;overflow-wrap:normal}
 .cz-touch__key em{font-style:normal;color:var(--gold)}
 .cz-touch__note{align-self:start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:clamp(18px,2.4vw,24px)}
@@ -89,7 +90,13 @@
 .cz-touch__data span{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.45}
 .cz-touch__note p{color:rgba(255,255,255,.76);font-size:12.5px;line-height:1.85;word-break:keep-all;line-break:strict;overflow-wrap:normal}
 .cz-touch__note .src{margin-top:12px;font-family:var(--f-lat);font-size:10.5px;color:rgba(255,255,255,.5);letter-spacing:.02em}
-.cz-touch__cta{grid-column:1 / -1;margin-top:6px}
+.cz-touch__cta{margin-top:clamp(22px,3vw,30px)}
+/* 3カード図解：出会う/聞く/返す */
+.touch3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.7vw,20px);margin-top:clamp(24px,3.2vw,34px)}
+.touch3 .c{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:clamp(20px,2.3vw,26px)}
+.touch3 .c .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--f-lat);font-weight:900;font-size:14px;margin-bottom:13px}
+.touch3 .c h3{font-family:var(--f-disp);font-weight:800;font-size:clamp(17px,1.9vw,20px);color:#fff;margin-bottom:9px}
+.touch3 .c p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.82;word-break:keep-all;line-break:strict}
 
 /* 入口ピル */
 .cz-doors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(26px,3.4vw,40px)}
@@ -112,7 +119,8 @@
   .cz-blob{width:min(82%,360px)}
   .cz-slope__in{grid-template-columns:1fr;gap:26px}
   .cz-doors{grid-template-columns:1fr}
-  .cz-touch{grid-template-columns:1fr;gap:22px}
+  .cz-touch__top{grid-template-columns:1fr;gap:22px}
+  .touch3{grid-template-columns:1fr;gap:12px}
   .cz-hero::before{font-size:58vw;opacity:.05}
 }
 @media(max-width:560px){
@@ -211,16 +219,22 @@
       <h2 class="h-sec">&ldquo;ECに出す&rdquo;だけでは、<br>まだ届かない。</h2>
     </div>
     <div class="cz-touch rv d1">
-      <div class="cz-touch__body">
-        <p>地方には、味や想いのこもった商品がたくさんあります。けれど都市の消費者にとっては、知らなければ存在しないのと同じ。ECに出す、SNSで発信する——それだけで選ばれる時代ではありません。</p>
-        <p>食品や地域産品の価値は、味や見た目、つくり手の想い、そして交わす会話のなかで伝わります。だからコレ買い！は、地方の逸品を都市のマルシェやイベントへ持ち込み、人が手に取り、話を聞き、&ldquo;買いたい&rdquo;と思う瞬間をつくります。そこで集まった反応や価格の感覚、買った理由を、つくり手に返し、次の売り方まで一緒に考えます。</p>
-        <p class="cz-touch__key">コレ買い！は、ECの代わりではなく、ECや継続販売につながる<em>&ldquo;最初の都市接点&rdquo;</em>をつくる活動です。</p>
+      <div class="cz-touch__top">
+        <div class="cz-touch__lead">
+          <p>地方には、まだ都市に知られていない&ldquo;いいもの&rdquo;がたくさんあります。ECに出す、SNSで発信する——それだけで選ばれる時代ではありません。だから私たちは、都市のリアルな場で<strong style="color:#fff;font-weight:700">出会いをつくります</strong>。</p>
+          <p class="cz-touch__key">コレ買い！は、ECの代わりではなく、ECや継続販売につながる<em>&ldquo;最初の都市接点&rdquo;</em>をつくる活動です。</p>
+        </div>
+        <aside class="cz-touch__note">
+          <p class="cz-touch__data"><b>4%台</b><span>食品・飲料・酒類の<br>EC化率（2023年）</span></p>
+          <p>多くの食品の購入は、いまもリアルな接点から。だから私たちは、現場で&ldquo;最初の出会い&rdquo;をつくります。</p>
+          <p class="src">出典：経済産業省「電子商取引に関する市場調査」</p>
+        </aside>
       </div>
-      <aside class="cz-touch__note">
-        <p class="cz-touch__data"><b>4%台</b><span>食品・飲料・酒類の<br>EC化率（2023年）</span></p>
-        <p>多くの食品の購入は、いまもリアルな接点から生まれています。だからこそ私たちは、都市の現場で&ldquo;最初の出会い&rdquo;をつくります。</p>
-        <p class="src">出典：経済産業省「電子商取引に関する市場調査」</p>
-      </aside>
+      <div class="touch3">
+        <div class="c"><span class="n">1</span><h3>出会う</h3><p>都市のマルシェやイベントで、地方の逸品を実際に手に取ってもらう。</p></div>
+        <div class="c"><span class="n">2</span><h3>聞く</h3><p>買った理由、迷った理由、価格の感覚や第一印象を、その場で集める。</p></div>
+        <div class="c"><span class="n">3</span><h3>返す</h3><p>集めた反応をつくり手へ返し、次の売り方まで一緒に考える。</p></div>
+      </div>
       <div class="cz-touch__cta"><a href="method.html" class="btn btn--oninK ghost">私たちの届け方 <span class="arw" aria-hidden="true">→</span></a></div>
     </div>
   </div>
@@ -282,6 +296,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260604j"></script>
+<script src="app.js?v=20260604k"></script>
 </body>
 </html>
