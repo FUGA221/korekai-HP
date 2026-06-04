@@ -6,21 +6,90 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-  /* ---- mobile menu ---- */
-  var burger = document.getElementById("burger");
-  var mobile = document.getElementById("mobile");
-  if (burger && mobile) {
-    burger.addEventListener("click", function () {
-      var open = mobile.classList.toggle("show");
-      burger.classList.toggle("open", open);
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
+  /* ---- notice bar（あんずフェア告知 / 全ページ注入・×で閉じ記憶） ---- */
+  (function () {
+    var closed = false;
+    try { closed = localStorage.getItem("korekai_notice_anzufair") === "closed"; } catch (e) {}
+    if (closed) return;
+    var bar = document.createElement("div");
+    bar.className = "notice-bar";
+    bar.innerHTML =
+      '<div class="wrap notice-bar__in">' +
+      '<a href="events.html"><span class="tagx">News</span><span class="txt">6/28 ちくまあんずフェア出展予定 ― 詳細は後日公開</span><span class="arw" aria-hidden="true">→</span></a>' +
+      '<button class="notice-bar__close" aria-label="お知らせを閉じる">×</button>' +
+      '</div>';
+    document.body.insertBefore(bar, document.body.firstChild);
+    bar.querySelector(".notice-bar__close").addEventListener("click", function () {
+      bar.classList.add("is-hidden");
+      try { localStorage.setItem("korekai_notice_anzufair", "closed"); } catch (e) {}
     });
-    mobile.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        mobile.classList.remove("show");
-        burger.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
+  })();
+
+  /* ---- メニュー：横スライドのドロワー / 同ボタンで開閉トグル / 折りたたみサブ ---- */
+  var mobile = document.getElementById("mobile");
+  if (mobile) {
+    var burger = document.getElementById("burger");
+    var czMenu = document.getElementById("czMenu");
+    var triggers = [burger, czMenu].filter(Boolean);
+
+    /* ヘッダーは backdrop-filter を持つため fixed の包含ブロックになる。
+       ドロワーを body 直下へ移し、確実に画面全高で固定する。 */
+    document.body.appendChild(mobile);
+
+    var backdrop = document.createElement("div");
+    backdrop.className = "mobile-backdrop";
+    document.body.appendChild(backdrop);
+
+    function setMenu(open) {
+      mobile.classList.toggle("show", open);
+      backdrop.classList.toggle("show", open);
+      document.body.classList.toggle("menu-open", open);
+      triggers.forEach(function (t) {
+        t.classList.toggle("open", open);
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+        t.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
       });
+    }
+    triggers.forEach(function (t) {
+      t.addEventListener("click", function () { setMenu(!mobile.classList.contains("show")); });
+    });
+    backdrop.addEventListener("click", function () { setMenu(false); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mobile.classList.contains("show")) {
+        setMenu(false);
+        if (czMenu) czMenu.focus(); else if (burger) burger.focus();
+      }
+    });
+
+    /* 折りたたみ：コレ買い！について（最初は閉じ・▽で開閉） */
+    var lead = mobile.querySelector(".mobile__lead");
+    if (lead) {
+      var subs = [], n = lead.nextElementSibling;
+      while (n && n.classList && n.classList.contains("mobile__sub")) { subs.push(n); n = n.nextElementSibling; }
+      if (subs.length) {
+        var group = document.createElement("div");
+        group.className = "mobile__group";
+        lead.parentNode.insertBefore(group, subs[0]);
+        subs.forEach(function (s) { group.appendChild(s); });
+        lead.setAttribute("role", "button");
+        lead.setAttribute("aria-expanded", "false");
+        var caret = document.createElement("span");
+        caret.className = "mc";
+        caret.setAttribute("aria-hidden", "true");
+        caret.textContent = "▽";
+        lead.appendChild(caret);
+        lead.addEventListener("click", function (e) {
+          e.preventDefault();
+          var op = group.classList.toggle("open");
+          lead.classList.toggle("open", op);
+          lead.setAttribute("aria-expanded", op ? "true" : "false");
+        });
+      }
+    }
+
+    /* 実リンクを押したらドロワーを閉じる（leadトグルは除外） */
+    mobile.querySelectorAll("a:not(.mobile__lead)").forEach(function (a) {
+      a.addEventListener("click", function () { setMenu(false); });
     });
   }
 
@@ -36,6 +105,29 @@
     }, { threshold: 0.15, rootMargin: "0px 0px -7% 0px" });
     rvs.forEach(function (e) { io.observe(e); });
   }
+
+  /* ---- scroll effects: 進捗バー / ヘッダー浮き / ヒーロー写真ズーム ---- */
+  (function () {
+    var prog = document.createElement("div");
+    prog.className = "scroll-prog";
+    document.body.appendChild(prog);
+    var hdr = document.querySelector(".hdr");
+    var heroImg = document.querySelector(".hero__photo img");
+    var docEl = document.documentElement;
+    var ticking = false;
+    function update() {
+      var y = window.scrollY || docEl.scrollTop || 0;
+      var max = docEl.scrollHeight - docEl.clientHeight;
+      prog.style.width = (max > 0 ? (y / max * 100) : 0) + "%";
+      if (hdr) hdr.classList.toggle("scrolled", y > 10);
+      if (heroImg && !reduce) heroImg.style.transform = "scale(" + (1 + Math.min(y, 800) * 0.00018) + ")";
+      ticking = false;
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    update();
+  })();
 
   /* ---- count up (confirmed values only) ---- */
   var el = document.getElementById("ec");
@@ -65,34 +157,39 @@
     }
   }
 
-  /* ---- hero 3D parallax (pointer) ---- */
-  var hero = document.getElementById("hero");
-  var art = document.getElementById("heroArt");
-  if (hero && art && !reduce && window.matchMedia("(pointer:fine)").matches) {
-    var nx = 0, ny = 0, raf = null;
-    var apply = function () {
-      raf = null;
-      art.style.transform = "rotateY(" + (nx * 11) + "deg) rotateX(" + (-ny * 8) + "deg)";
-    };
-    hero.addEventListener("pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      nx = (e.clientX - r.left) / r.width - 0.5;
-      ny = (e.clientY - r.top) / r.height - 0.5;
-      if (!raf) raf = requestAnimationFrame(apply);
-    });
-    hero.addEventListener("pointerleave", function () {
-      nx = 0; ny = 0;
-      if (!raf) raf = requestAnimationFrame(apply);
-    });
-  }
-
   /* ---- contact form -> mailto fuga.n.0201@gmail.com ---- */
   var form = document.getElementById("cform");
   if (form) {
     var TOPICS = { product: "商品の予約・取扱", producer: "生産者・自治体の相談", press: "取材・メディア・コラボ", other: "その他" };
+
+    /* inline validation（欄を離れた瞬間に朱赤で1行エラー） */
+    var vfields = [].slice.call(form.querySelectorAll("#nm, #em, #msg"));
+    function fieldMsg(f) {
+      if (f.validity.valueMissing) return "入力してください。";
+      if (f.type === "email" && f.validity.typeMismatch) return "メールアドレスの形式をご確認ください。";
+      return "ご確認ください。";
+    }
+    function validateField(f) {
+      var box = f.closest(".field");
+      var err = box ? box.querySelector(".field-error") : null;
+      if (f.checkValidity()) {
+        f.classList.remove("invalid");
+        if (err) err.remove();
+        return true;
+      }
+      f.classList.add("invalid");
+      if (!err) { err = document.createElement("p"); err.className = "field-error"; f.insertAdjacentElement("afterend", err); }
+      err.textContent = fieldMsg(f);
+      return false;
+    }
+    vfields.forEach(function (f) {
+      f.addEventListener("blur", function () { f.dataset.touched = "1"; validateField(f); });
+      f.addEventListener("input", function () { if (f.dataset.touched) validateField(f); });
+    });
+
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!form.checkValidity()) { vfields.forEach(validateField); form.reportValidity(); return; }
       var picked = form.querySelector('input[name="topic"]:checked');
       var topic = picked ? (TOPICS[picked.value] || picked.value) : "お問い合わせ";
       var nm = (document.getElementById("nm") || {}).value || "";
@@ -118,5 +215,13 @@
         sent.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
       }
     });
+  }
+
+  /* ---- smartphone sticky CTA (表示はCSSで900px以下のみ) ---- */
+  if (!/contact/.test(location.pathname)) {
+    var sc = document.createElement("div");
+    sc.className = "sticky-cta";
+    sc.innerHTML = '<a href="contact.html">お問い合わせ <span aria-hidden="true">→</span></a>';
+    document.body.appendChild(sc);
   }
 })();

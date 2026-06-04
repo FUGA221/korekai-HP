@@ -1,185 +1,287 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>コレ買い！｜地域の“いいもの”を、「売れる」に変える。</title>
-<meta name="description" content="コレ買い！は複数大学の学生による検証販売プロジェクト。地域の隠れた逸品を都市で対面販売し、売れた理由をデータにしてつくり手へ還元します。" />
-<link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コレ買い！｜地方の“いいもの”を、都市へ届ける。</title>
+<meta name="description" content="地方には、いいものを作っているのに都市に届いていないつくり手がいる。コレ買い！は、その逸品を都市へ届け、イベントや発信で知名度を広げ、地域を盛り上げる複数大学の学生団体です。">
+<link rel="canonical" href="https://korekai26.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://korekai26.com/">
+<meta property="og:title" content="コレ買い！｜地方の“いいもの”を、都市へ届ける。">
+<meta property="og:description" content="地方の逸品を都市へ届け、つくり手を応援し、地域を盛り上げる複数大学の学生団体。">
+<meta property="og:image" content="https://korekai26.com/img/orchard-blossom.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FAF3E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=20260604j">
+<style>
+/* =====================================================================
+   HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
+   コンセプト: 地方のいいものを都市へ流通＋つくり手支援＋地域活性化
+   見出しの改行は文節で／助詞孤立NG／nowrap＋clamp自動縮小／balance不使用
+   ===================================================================== */
+.cz-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%)}
+.cz-hero::before{content:"買";position:absolute;z-index:0;pointer-events:none;right:-.18em;top:-.16em;font-family:var(--f-disp);font-weight:800;font-size:clamp(260px,42vw,640px);line-height:.8;color:var(--shu-bright);opacity:.05;transform:rotate(-6deg)}
+.cz-hero__in{position:relative;z-index:2;padding:clamp(30px,4vw,56px) var(--gut) clamp(42px,6vw,84px)}
+
+/* メニューはヘッダーの埋め込み「☰ Menu」ボタンに統一（旧・円形フローティングMENUは撤去） */
+
+.cz-eyebrow{margin-bottom:clamp(16px,2.2vw,24px)}
+.cz-eyebrow .seal{font-size:17px;margin-right:4px}
+
+/* 巨大タイトル（全幅・文節改行・折り返さない） */
+.cz-title{font-family:var(--f-disp);font-weight:800;color:var(--ink);font-size:clamp(27px,7.6vw,84px);line-height:1.16;letter-spacing:.005em;word-break:keep-all;overflow-wrap:anywhere;margin-bottom:clamp(22px,3vw,38px)}
+.cz-title .ln{display:block;white-space:nowrap}
+.cz-title em{font-style:normal;color:var(--shu-bright);position:relative;z-index:0;display:inline-block;padding:0 .04em}
+.cz-title em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--gold);border-radius:4px;z-index:-1;transform-origin:left center}
+@media (prefers-reduced-motion:no-preference){.cz-title em::after{animation:czhl .9s var(--ease) .6s both}}
+@keyframes czhl{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* タイトル下の2カラム（コピー＋メインビジュアル） */
+.cz-split{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(26px,4vw,56px);align-items:center}
+.cz-lead{max-width:32em;color:var(--ink-soft);font-size:clamp(15px,1.7vw,17.5px);line-height:1.95;word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
+.cz-lead strong{color:var(--ink);font-weight:700}
+.cz-lead .big{display:block;font-family:var(--f-disp);font-weight:800;font-size:clamp(18px,2.2vw,23px);color:var(--ink);margin-bottom:10px;line-height:1.5}
+.cz-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(24px,3.2vw,34px)}
+.cz-cta .btn{padding:16px 32px;font-size:15px}
+.cz-tape{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,34px)}
+.cz-tape span{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-disp);font-weight:800;font-size:13.5px;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:100px;padding:9px 15px 9px 12px;white-space:nowrap}
+.cz-tape span .n{font-family:var(--f-lat);font-weight:900;font-size:12px;color:var(--shu)}
+
+/* メインビジュアル（ブロブ）— 画像①が入るまでのブランドplaceholder */
+.cz-blobwrap{position:relative;justify-self:center}
+.cz-blob{position:relative;width:min(100%,420px);aspect-ratio:5/6;overflow:hidden;border-radius:46% 54% 58% 42%/48% 44% 56% 52%;box-shadow:0 34px 70px -28px rgba(42,21,32,.5);animation:czmorph 14s ease-in-out infinite}
+.cz-blob img{width:100%;height:100%;object-fit:cover;display:block}
+.cz-blob--ph{display:grid;place-items:center;text-align:center;background:radial-gradient(120% 100% at 30% 20%,var(--paper) 0%,var(--paper-2) 46%,color-mix(in srgb,var(--gold) 30%,var(--paper-2)) 100%);border:1.5px dashed rgba(122,37,64,.3)}
+.cz-blob__mark{font-family:var(--f-disp);font-weight:800;font-size:clamp(96px,15vw,168px);color:var(--shu-bright);opacity:.92;transform:rotate(-6deg);line-height:1;text-shadow:0 10px 30px rgba(224,67,31,.25)}
+.cz-blob__note{position:absolute;left:0;right:0;bottom:22px;font-family:var(--f-lat);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);line-height:1.7;padding:0 24px}
+.cz-blob__note b{display:block;font-family:var(--f-body);font-size:12.5px;letter-spacing:.02em;text-transform:none;color:var(--ink);margin-top:3px}
+@keyframes czmorph{0%,100%{border-radius:46% 54% 58% 42%/48% 44% 56% 52%}50%{border-radius:58% 42% 44% 56%/56% 58% 42% 44%}}
+@media (prefers-reduced-motion:reduce){.cz-blob{animation:none}}
+
+/* 差し色バンド（斜めの面・朱→金） */
+.cz-slope{position:relative;background:linear-gradient(100deg,var(--shu) 0%,var(--shu-bright) 58%,var(--gold) 132%);color:#fff;padding:clamp(46px,6vw,78px) 0;overflow:hidden;clip-path:polygon(0 4%,100% 0,100% 96%,0 100%)}
+.cz-slope::before{content:"KOREKAI";position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-lat);font-weight:900;font-size:clamp(90px,20vw,300px);line-height:1;color:rgba(255,255,255,.08);letter-spacing:.02em;pointer-events:none;white-space:nowrap}
+.cz-slope__in{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.cz-slope__lead{font-family:var(--f-disp);font-weight:800;font-size:clamp(22px,3.2vw,38px);line-height:1.42;color:#fff;word-break:keep-all;overflow-wrap:anywhere}
+.cz-slope__lead em{font-style:normal;color:var(--ink)}
+.cz-slope__sub{margin-top:18px;color:rgba(255,255,255,.88);font-size:14.5px;line-height:1.95;max-width:42em;word-break:keep-all;overflow-wrap:anywhere}
+.cz-3{display:grid;gap:1px;background:rgba(255,255,255,.28);border-radius:var(--r);overflow:hidden}
+.cz-3 .it{padding:20px 22px}
+.cz-3 .it .k{display:flex;align-items:center;gap:11px;font-family:var(--f-disp);font-weight:800;font-size:17px;color:#fff}
+.cz-3 .it .k .b{font-family:var(--f-disp);font-weight:800;font-size:15px;color:var(--ink);background:var(--gold);width:1.9em;height:1.9em;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+.cz-3 .it p{margin-top:10px;font-size:13px;color:rgba(255,255,255,.85);line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
+
+/* 最初の都市接点（メッセージ主導／EC化率は補足ノート扱い・wine） */
+.cz-touch{display:grid;grid-template-columns:1.55fr .9fr;gap:clamp(26px,4vw,54px);align-items:start}
+.cz-touch__body p{color:rgba(255,255,255,.9);font-size:clamp(14.5px,1.6vw,16px);line-height:1.98;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__body p+p{margin-top:16px}
+.cz-touch__key{margin-top:24px;padding-left:18px;border-left:3px solid var(--gold);font-family:var(--f-disp);font-weight:800;font-size:clamp(16px,1.95vw,20px);line-height:1.72;color:#fff!important;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__key em{font-style:normal;color:var(--gold)}
+.cz-touch__note{align-self:start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:clamp(18px,2.4vw,24px)}
+.cz-touch__data{display:flex;align-items:baseline;gap:11px;margin-bottom:12px}
+.cz-touch__data b{font-family:var(--f-lat);font-weight:900;font-size:clamp(34px,4.4vw,46px);color:var(--gold);line-height:.9}
+.cz-touch__data span{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.45}
+.cz-touch__note p{color:rgba(255,255,255,.76);font-size:12.5px;line-height:1.85;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__note .src{margin-top:12px;font-family:var(--f-lat);font-size:10.5px;color:rgba(255,255,255,.5);letter-spacing:.02em}
+.cz-touch__cta{grid-column:1 / -1;margin-top:6px}
+
+/* 入口ピル */
+.cz-doors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(26px,3.4vw,40px)}
+.cz-door{position:relative;display:flex;flex-direction:column;min-height:200px;background:var(--white);border:1px solid var(--line);border-radius:26px;padding:28px 26px 24px;overflow:hidden;transition:transform .32s var(--ease),box-shadow .32s var(--ease)}
+.cz-door::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--shu)}
+.cz-door:nth-child(2)::before{background:var(--wine)}
+.cz-door:nth-child(3)::before{background:var(--gold)}
+.cz-door:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(42,21,32,.5)}
+.cz-door__no{font-family:var(--f-lat);font-weight:900;font-size:14px;color:var(--shu)}
+.cz-door h3{font-family:var(--f-disp);font-weight:800;font-size:22px;margin:auto 0 10px;word-break:keep-all;overflow-wrap:anywhere}
+.cz-door p{font-size:13px;color:var(--ink-soft);line-height:1.75;margin-bottom:16px;word-break:keep-all;overflow-wrap:anywhere}
+.cz-door .go{display:inline-flex;align-items:center;gap:.5em;font-family:var(--f-body);font-weight:700;font-size:14px;color:var(--shu)}
+.cz-door .go .arw{transition:transform .3s var(--ease)}
+.cz-door:hover .go .arw{transform:translateX(6px)}
+.cz-cta-band .btn{padding:18px 40px;font-size:15.5px}
+
+@media(max-width:900px){
+  .cz-split{grid-template-columns:1fr;gap:30px}
+  .cz-blobwrap{order:-1}
+  .cz-blob{width:min(82%,360px)}
+  .cz-slope__in{grid-template-columns:1fr;gap:26px}
+  .cz-doors{grid-template-columns:1fr}
+  .cz-touch{grid-template-columns:1fr;gap:22px}
+  .cz-hero::before{font-size:58vw;opacity:.05}
+}
+@media(max-width:560px){
+  .cz-tape span{font-size:13px}
+}
+</style>
 </head>
 <body>
-
 <header class="hdr">
-  <div class="wrap hdr__in">
-    <a href="index.html" class="brand" aria-label="コレ買い！ ホーム">
-      <span class="brand__seal">買</span>
-      <span class="brand__name">コレ買い<span class="ex">！</span></span>
-    </a>
-    <nav class="nav" aria-label="メインナビ">
-      <a href="index.html" class="is-active">ホーム</a>
-      <a href="about.html">私たち</a>
-      <a href="method.html">仕組み</a>
-      <a href="products.html">取扱事例</a>
-      <a href="producers.html">生産者の方へ</a>
-    </nav>
-    <a href="contact.html" class="btn btn--shu hdr__cta">お問い合わせ</a>
-    <button class="burger" id="burger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-  <nav class="mobile" id="mobile" aria-label="モバイルナビ">
-    <a href="index.html">ホーム</a>
-    <a href="about.html">私たち</a>
-    <a href="method.html">仕組み</a>
-    <a href="products.html">取扱事例</a>
-    <a href="producers.html">生産者の方へ</a>
-    <a href="contact.html" class="btn btn--shu">お問い合わせ</a>
-  </nav>
+<div class="wrap hdr__in">
+<a href="index.html" class="brand" aria-label="コレ買い！ ホーム"><span class="brand__seal">買</span><span class="brand__name">コレ買い<span class="ex">！</span></span></a>
+<nav class="nav" aria-label="メインナビ"><a href="index.html" class="is-active">ホーム</a><span class="nav__has"><a href="about.html" class="nav__top">コレ買い！について <span class="caret" aria-hidden="true">▾</span></a><span class="nav__drop"><a href="method.html">仕組み詳細</a><a href="about.html">メンバー紹介</a><a href="testmarket.html">検証販売について</a><a href="support.html">支援内容の詳細</a></span></span><a href="products.html">取扱事例</a><a href="events.html">イベント</a><a href="producers.html">生産者の方へ</a></nav>
+<a href="contact.html" class="btn btn--shu hdr__cta">お問い合わせ</a>
+<button class="burger" id="burger" aria-label="メニュー" aria-expanded="false"><span class="burger__lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
+</div>
+<nav class="mobile" id="mobile" aria-label="モバイルナビ"><a href="index.html">ホーム</a><a href="about.html" class="mobile__lead">コレ買い！について</a><a href="method.html" class="mobile__sub">仕組み詳細</a><a href="about.html" class="mobile__sub">メンバー紹介</a><a href="testmarket.html" class="mobile__sub">検証販売について</a><a href="support.html" class="mobile__sub">支援内容の詳細</a><a href="products.html">取扱事例</a><a href="events.html">イベント</a><a href="producers.html">生産者の方へ</a><a href="contact.html" class="btn btn--shu">お問い合わせ</a></nav>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="wrap hero__wrap">
-      <div class="hero__head">
-        <p class="eyebrow hero__eyebrow"><span class="seal">買</span> The Curator&rsquo;s Stamp <span class="jp">目利き、はじめます。</span></p>
-        <h1 class="hero__title">
-          <span class="ln">地域の&ldquo;いいもの&rdquo;を、</span>
-          <span class="ln"><em>「売れる」</em>に変える。</span>
-        </h1>
-        <p class="hero__lead">良いものを作っているのに、若い世代に届かない。<br>都市の現場で売り、<strong>売れた理由をデータにして</strong>つくり手に返します。</p>
-        <div class="hero__cta">
-          <a href="products.html" class="btn btn--shu">取扱事例を見る <span class="arw">→</span></a>
-          <a href="about.html" class="btn btn--line">コレ買い！とは</a>
+<!-- ① HERO — A案コピー / 全幅タイトル（文節改行）/ メインビジュアルplaceholder。メニューはヘッダーの埋め込みボタンに統一 -->
+<section class="cz-hero">
+  <div class="cz-hero__in wrap">
+    <span class="eyebrow cz-eyebrow"><span class="seal">買</span>For Local Makers <span class="jp">／ 地方のつくり手を応援する学生団体</span></span>
+    <h1 class="cz-title">
+      <span class="ln">地方の&ldquo;いいもの&rdquo;を、</span>
+      <span class="ln">都市へ<em>届ける</em>。</span>
+    </h1>
+    <div class="cz-split">
+      <div class="cz-hero__copy">
+        <p class="cz-lead"><span class="big">つくり手を応援し、地域を元気に。</span>地方には、いいものを作っているのに都市に届いていないつくり手がいます。私たちはその逸品を都市へ届け、イベントや発信で知名度を広げ、地域を盛り上げる学生団体です。</p>
+        <div class="cz-cta">
+          <a href="about.html" class="btn btn--shu">コレ買い！とは <span class="arw" aria-hidden="true">→</span></a>
+          <a href="products.html" class="btn btn--line">取扱事例を見る <span class="arw" aria-hidden="true">→</span></a>
+        </div>
+        <div class="cz-tape">
+          <span><span class="n">01</span> 地方の逸品を都市へ</span>
+          <span><span class="n">02</span> つくり手を応援</span>
+          <span><span class="n">03</span> イベントで地域を活性化</span>
         </div>
       </div>
-      <div class="hero__photo">
-        <img src="img/orchard-blossom.jpg" alt="工房アプリコのあんず畑（長野県千曲市）一面に咲くあんずの花のトンネル" loading="eager" />
-        <div class="cap">工房アプリコのあんず畑 ／ 長野県千曲市<span class="seal">買</span></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ONE BIG STAT -->
-  <section class="sec sec--wine">
-    <div class="wrap">
-      <div class="stat">
-        <div class="rv">
-          <span class="stat__num"><span id="ec" data-to="4.5" data-dec="1">0.0</span></span><span class="stat__unit">%</span>
-        </div>
-        <div class="stat__cap rv d2">
-          <p class="t">食品が&ldquo;ネットで&rdquo;買われる割合は、たった、これだけ。</p>
-          <p class="d">裏を返せば、95%以上は今も「対面」で選ばれている。だからこそ、食べて納得してもらう現場が、いちばんの突破口になる。</p>
-          <p class="src">Source — 食品EC化率（オフライン購買比率）</p>
-        </div>
+      <div class="cz-blobwrap rv d1">
+        <figure class="cz-blob">
+          <img src="img/scene-city-market.jpg" alt="都市のマルシェで、学生が地域のあんず加工品を対面で販売している様子" width="456" height="518" loading="eager">
+        </figure>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 3 DOORS -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec__head rv">
-        <p class="eyebrow">Where to start <span class="jp">入口</span></p>
-        <h2 class="h-sec">3つの入口から。</h2>
-      </div>
-      <div class="doors">
-        <a class="door rv d1" href="method.html">
-          <span class="door__no">01</span>
-          <h3>仕組みを知る</h3>
-          <p>「小売 × 市場調査」を同時に行う。売れるかどうかを現場で確かめる方法。</p>
-          <span class="go">→</span>
-        </a>
-        <a class="door rv d2" href="products.html">
-          <span class="door__no">02</span>
-          <h3>逸品を見る</h3>
-          <p>私たちが選び、検証する地域の逸品たち。産地とつくり手のストーリーごと。</p>
-          <span class="go">→</span>
-        </a>
-        <a class="door rv d3" href="producers.html">
-          <span class="door__no">03</span>
-          <h3>逸品を託す</h3>
-          <p>生産者・自治体の方へ。検証販売を、私たちが責任を持ってお預かりします。</p>
-          <span class="go">→</span>
-        </a>
-      </div>
+<!-- ② 最新情報 -->
+<section class="news">
+  <div class="wrap news__in">
+    <div class="news__head rv">
+      <span class="eyebrow">News <span class="jp">／ 最新情報</span></span>
     </div>
-  </section>
+    <div class="newslist rv d1">
+      <a class="newsrow" href="events.html">
+        <span class="newsrow__date">2026.6</span>
+        <span class="newsrow__tag">Event</span>
+        <span class="newsrow__ttl">あんず収穫インターン（6/20-21・6/27-28）参加者募集中</span>
+        <span class="newsrow__go" aria-hidden="true">→</span>
+      </a>
+      <a class="newsrow" href="events.html">
+        <span class="newsrow__date">2026.6.28</span>
+        <span class="newsrow__tag">Fair</span>
+        <span class="newsrow__ttl">ちくまあんずフェアに出展予定 ― 詳細は後日公開</span>
+        <span class="newsrow__go" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- ON THE GROUND -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec__head rv">
-        <p class="eyebrow">On the ground <span class="jp">現場の記録</span></p>
-        <h2 class="h-sec">産地に、足を運ぶ。</h2>
-        <p class="lead">長野県千曲市・工房アプリコの現場で。収穫から加工、出荷まで、つくり手の隣で見て、確かめています。</p>
-      </div>
-      <div class="gallery">
-        <figure class="gframe rv d1"><img src="img/harvest.jpg" alt="あんずの収穫風景（長野県千曲市森地区）" loading="lazy" /><figcaption><span class="pl">Harvest</span>あんずの収穫 ／ 千曲市森地区</figcaption></figure>
-        <figure class="gframe rv d2"><img src="img/apprico-sign.jpg" alt="工房アプリコの看板" loading="lazy" /><figcaption><span class="pl">Maker</span>工房アプリコ ／ 千曲市</figcaption></figure>
-        <figure class="gframe rv d3"><img src="img/shipping.jpg" alt="JAながのでの出荷・取次の様子" loading="lazy" /><figcaption><span class="pl">Shipping</span>出荷・取次 ／ JAながの</figcaption></figure>
-      </div>
+<!-- 私たちがすること（斜めの面・朱→金） -->
+<section class="cz-slope">
+  <div class="wrap cz-slope__in">
+    <div class="rv">
+      <span class="eyebrow" style="color:var(--ink)"><span style="color:var(--ink)">What we do</span> <span class="jp" style="color:rgba(42,21,32,.66)">／ 私たちがすること</span></span>
+      <p class="cz-slope__lead">ただ売るだけじゃない。<em>地域ごと</em>、応援する。</p>
+      <p class="cz-slope__sub">地方の逸品を都市へ届け、イベントや発信で知名度を広げ、若い世代を巻き込んで地域を盛り上げます。「どう売れるか」のテストマーケやデータ分析も、つくり手を支えるための手段のひとつです。</p>
     </div>
-  </section>
+    <div class="cz-3 rv d1">
+      <div class="it"><div class="k"><span class="b">流</span>都市へ届ける</div><p>地方に眠る逸品を、首都圏の現場・イベントへ流通させる。</p></div>
+      <div class="it"><div class="k"><span class="b">援</span>つくり手を応援</div><p>反応や売れた理由をデータで返し、次の一手を一緒に考える。</p></div>
+      <div class="it"><div class="k"><span class="b">興</span>地域を盛り上げる</div><p>イベント・発信で知名度を上げ、若者の関心を地域へ向ける。</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- TRUST -->
-  <section class="sec sec--paper2">
-    <div class="wrap">
-      <div class="sec__head rv" style="margin-bottom:30px">
-        <p class="eyebrow">Why us <span class="jp">学生団体だからこそ</span></p>
-        <h2 class="h-sec">信用は、言葉ではなく<br>仕組みでつくる。</h2>
-        <p class="lead">委託ではなく<strong style="color:var(--ink);font-weight:700">買取</strong>で仕入れ、売れ残りのリスクは私たちが負う。学生団体の弱点とされる「信用」を、責任の明文化で武器に変えます。</p>
-      </div>
-      <div class="points">
-        <div class="point rv d1"><div class="k"><span class="seal">買</span>買取で仕入れる</div><p>委託でなく事前買い取り。売れ残りは私たちが負担。</p></div>
-        <div class="point rv d2"><div class="k"><span class="seal">温</span>温度を記録する</div><p>冷蔵10℃・冷凍-15℃以下を実測ログで管理。</p></div>
-        <div class="point rv d3"><div class="k"><span class="seal">備</span>備えて対応する</div><p>PL保険を検討中。クレーム一次対応も整備。</p></div>
-        <div class="point rv d4"><div class="k"><span class="seal">返</span>データで返す</div><p>売上・反応を簡易レポートにして還元。</p></div>
-      </div>
-      <div style="margin-top:30px"><a href="method.html" class="txtlink rv">私たちの責任体制を見る <span class="arw">→</span></a></div>
+<!-- ③ 最初の都市接点（EC化率は主張の中心でなく補足ノート扱い） -->
+<section class="sec sec--wine">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <span class="eyebrow">First Touch <span class="jp">／ 最初の都市接点</span></span>
+      <h2 class="h-sec">&ldquo;ECに出す&rdquo;だけでは、<br>まだ届かない。</h2>
     </div>
-  </section>
+    <div class="cz-touch rv d1">
+      <div class="cz-touch__body">
+        <p>地方には、味や想いのこもった商品がたくさんあります。けれど都市の消費者にとっては、知らなければ存在しないのと同じ。ECに出す、SNSで発信する——それだけで選ばれる時代ではありません。</p>
+        <p>食品や地域産品の価値は、味や見た目、つくり手の想い、そして交わす会話のなかで伝わります。だからコレ買い！は、地方の逸品を都市のマルシェやイベントへ持ち込み、人が手に取り、話を聞き、&ldquo;買いたい&rdquo;と思う瞬間をつくります。そこで集まった反応や価格の感覚、買った理由を、つくり手に返し、次の売り方まで一緒に考えます。</p>
+        <p class="cz-touch__key">コレ買い！は、ECの代わりではなく、ECや継続販売につながる<em>&ldquo;最初の都市接点&rdquo;</em>をつくる活動です。</p>
+      </div>
+      <aside class="cz-touch__note">
+        <p class="cz-touch__data"><b>4%台</b><span>食品・飲料・酒類の<br>EC化率（2023年）</span></p>
+        <p>多くの食品の購入は、いまもリアルな接点から生まれています。だからこそ私たちは、都市の現場で&ldquo;最初の出会い&rdquo;をつくります。</p>
+        <p class="src">出典：経済産業省「電子商取引に関する市場調査」</p>
+      </aside>
+      <div class="cz-touch__cta"><a href="method.html" class="btn btn--oninK ghost">私たちの届け方 <span class="arw" aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+</section>
 
-  <!-- CTA BAND -->
-  <section class="cta-band">
-    <div class="wrap">
-      <h2 class="rv">あなたの地域の逸品、<br><em>「売れる」</em>か確かめませんか。</h2>
-      <a href="producers.html" class="btn btn--oninK rv d1">生産者・自治体の方へ <span class="arw">→</span></a>
+<!-- 3つの入口 -->
+<section class="sec sec--paper2">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <span class="eyebrow">Explore <span class="jp">／ もっと知る</span></span>
+      <h2 class="h-sec">コレ買い！を、<br>もっと知る。</h2>
     </div>
-  </section>
+    <div class="cz-doors">
+      <a class="cz-door rv" href="about.html">
+        <span class="cz-door__no">01 — About</span>
+        <h3>コレ買い！について</h3>
+        <p>私たちの考え方と、仕組み・メンバー・検証販売・支援内容まで。</p>
+        <span class="go">もっと知る <span class="arw" aria-hidden="true">→</span></span>
+      </a>
+      <a class="cz-door rv d1" href="products.html">
+        <span class="cz-door__no">02 — Products</span>
+        <h3>取扱事例を見る</h3>
+        <p>いま都市へ届けている地域の逸品。工房アプリコのあんず加工品など。</p>
+        <span class="go">事例へ <span class="arw" aria-hidden="true">→</span></span>
+      </a>
+      <a class="cz-door rv d2" href="producers.html">
+        <span class="cz-door__no">03 — Producers</span>
+        <h3>生産者の方へ</h3>
+        <p>「いいものなのに届かない」を、一緒に都市へ。出品・連携のご相談。</p>
+        <span class="go">相談する <span class="arw" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ④ CTA band -->
+<section class="cta-band cz-cta-band">
+  <div class="wrap">
+    <h2 class="rv"><span class="ln">あなたの地域の&ldquo;いいもの&rdquo;を、</span><span class="ln"><em>都市へ</em>。</span></h2>
+    <div class="cz-cta rv d1" style="justify-content:center">
+      <a href="contact.html" class="btn btn--oninK">お問い合わせ <span class="arw" aria-hidden="true">→</span></a>
+      <a href="producers.html" class="btn btn--oninK ghost">生産者・自治体の方へ <span class="arw" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer class="ft">
-  <div class="wrap">
-    <div class="ft__top">
-      <div class="ft__brand">
-        <div class="row"><span class="brand__seal">買</span><span class="nm">コレ買い<span class="ex">！</span></span></div>
-        <p class="mi">地域の隠れた逸品を、首都圏で「売れる」へ。</p>
-        <dl class="ft__entity">
-          <dt>団体</dt><dd>複数大学の学生による団体（2026.01発足）</dd>
-          <dt>代表</dt><dd>野口 拓朗（慶應義塾大学）</dd>
-          <dt>拠点</dt><dd>慶應義塾大学 日吉キャンパス</dd>
-          <dt>連絡</dt><dd><a href="mailto:fuga.n.0201@gmail.com" style="text-decoration:underline">fuga.n.0201@gmail.com</a></dd>
-        </dl>
-      </div>
-      <nav class="ft__col">
-        <h4>About</h4>
-        <a href="about.html">私たち</a>
-        <a href="method.html">仕組み</a>
-        <a href="products.html">取扱事例</a>
-      </nav>
-      <nav class="ft__col">
-        <h4>Contact</h4>
-        <a href="producers.html">生産者・自治体の方へ</a>
-        <a href="contact.html">お問い合わせ</a>
-        <a href="contact.html">取材・メディア</a>
-      </nav>
-    </div>
-    <p class="ft__notice">本サイトは商品の予約取次・お問い合わせの窓口です。オンライン決済は行っていません。継続取引・売上保証の確約はしておりません。掲載商品の原材料・アレルゲン・賞味期限・保存方法は、予約取次の際に生産者ラベル原本でご確認いただきます。</p>
-    <p class="ft__copy">© 2026 KOREKAI — Retail × Market Research for Regional Products.</p>
-  </div>
+<div class="wrap">
+<div class="ft__top">
+<div class="ft__brand"><div class="row"><span class="brand__seal">買</span><span class="nm">コレ買い<span class="ex">！</span></span></div><p class="mi">地方の&ldquo;いいもの&rdquo;を、都市へ。つくり手を、応援する。</p>
+<dl class="ft__entity"><dt>団体</dt><dd>複数大学の学生による団体（2026.01発足）</dd><dt>代表</dt><dd>野口 拓朗（慶應義塾大学）</dd><dt>拠点</dt><dd>慶應義塾大学 日吉キャンパス</dd><dt>連絡</dt><dd><a href="mailto:fuga.n.0201@gmail.com">fuga.n.0201@gmail.com</a></dd></dl></div>
+<nav class="ft__col"><h4>コレ買い！について</h4><a href="method.html">仕組み詳細</a><a href="about.html">メンバー紹介</a><a href="testmarket.html">検証販売について</a><a href="support.html">支援内容の詳細</a></nav>
+<nav class="ft__col"><h4>Menu</h4><a href="products.html">取扱事例</a><a href="events.html">イベント</a><a href="producers.html">生産者の方へ</a><a href="contact.html">お問い合わせ</a></nav>
+</div>
+<p class="ft__copy">© 2026 KOREKAI — Retail × Market Research for Regional Products.</p>
+</div>
 </footer>
 
-<script src="app.js"></script>
+<!-- メニュー開閉は app.js で統一管理 -->
+<script src="app.js?v=20260604j"></script>
 </body>
 </html>

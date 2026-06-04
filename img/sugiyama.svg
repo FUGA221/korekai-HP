@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="男子学生のイラスト（杉山 航）">
+  <rect width="240" height="300" fill="#F3E9D6"/>
+  <circle cx="120" cy="130" r="78" fill="#EFE2CB"/>
+  <!-- blazer / shoulders -->
+  <path d="M14 300 C14 244 64 214 120 214 C176 214 226 244 226 300 Z" fill="#7A2540"/>
+  <!-- shirt -->
+  <path d="M120 214 L150 300 L90 300 Z" fill="#FBF7EF"/>
+  <!-- collar -->
+  <path d="M120 214 L104 246 L120 232 Z" fill="#EFE7D8"/>
+  <path d="M120 214 L136 246 L120 232 Z" fill="#E4D9C4"/>
+  <!-- tie accent -->
+  <path d="M120 232 L113 270 L120 282 L127 270 Z" fill="#E0431F"/>
+  <!-- neck -->
+  <rect x="106" y="186" width="28" height="40" rx="12" fill="#E8C49E"/>
+  <!-- ears -->
+  <circle cx="74" cy="150" r="11" fill="#E8C49E"/>
+  <circle cx="166" cy="150" r="11" fill="#E8C49E"/>
+  <!-- head -->
+  <ellipse cx="120" cy="146" rx="50" ry="55" fill="#EEC9A2"/>
+  <!-- hair -->
+  <path d="M68 150 C66 96 174 96 172 150 C172 124 156 104 120 104 C84 104 68 124 68 150 Z" fill="#2A1520"/>
+  <path d="M120 104 C100 104 84 112 76 128 C92 116 150 116 164 128 C156 112 140 104 120 104 Z" fill="#1d0e16"/>
+  <!-- eyebrows -->
+  <rect x="95" y="138" width="20" height="4" rx="2" fill="#2A1520"/>
+  <rect x="125" y="138" width="20" height="4" rx="2" fill="#2A1520"/>
+  <!-- eyes -->
+  <circle cx="105" cy="152" r="4.5" fill="#2A1520"/>
+  <circle cx="135" cy="152" r="4.5" fill="#2A1520"/>
+  <!-- nose -->
+  <path d="M120 158 L116 170 L124 170 Z" fill="#E0AE84"/>
+  <!-- mouth -->
+  <path d="M108 180 Q120 188 132 180" stroke="#9A5B49" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
