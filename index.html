@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap">
 <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png"><link rel="icon" sizes="any" href="/img/logo-circle.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=20260605u">
+<link rel="stylesheet" href="style.css?v=20260605v">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -68,7 +68,7 @@
 @media (prefers-reduced-motion:reduce){.cz-blob{animation:none}}
 
 /* 差し色バンド（斜めの面・朱→金） */
-.cz-slope{position:relative;background:var(--paper);color:var(--ink);padding:clamp(62px,8vw,112px) 0;overflow:hidden}
+.cz-slope{position:relative;background:var(--paper-2);color:var(--ink);padding:clamp(62px,8vw,112px) 0;overflow:hidden}
 .cz-slope::before{content:"KOREKAI";position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-lat);font-weight:900;font-size:clamp(90px,20vw,300px);line-height:1;color:rgba(42,21,32,.035);letter-spacing:.02em;pointer-events:none;white-space:nowrap}
 .cz-slope__in{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
 .cz-slope__lead{font-family:var(--f-disp);font-weight:800;font-size:clamp(22px,3.2vw,38px);line-height:1.42;color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
@@ -87,7 +87,7 @@
 .cz-touch__lead p+p{margin-top:16px}
 .cz-touch__key{margin-top:24px;padding-left:18px;border-left:3px solid var(--gold);font-family:var(--f-disp);font-weight:800;font-size:clamp(16px,1.95vw,20px);line-height:1.72;color:var(--ink)!important;word-break:keep-all;line-break:strict;overflow-wrap:normal}
 .cz-touch__key em{font-style:normal;color:var(--wine)}
-.cz-touch__note{align-self:start;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.4vw,24px)}
+.cz-touch__note{align-self:start;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.4vw,24px)}
 .cz-touch__data{display:flex;align-items:baseline;gap:11px;margin-bottom:12px}
 .cz-touch__data b{font-family:var(--f-lat);font-weight:900;font-size:clamp(34px,4.4vw,46px);color:var(--shu);line-height:.9}
 .cz-touch__data span{font-size:11.5px;color:var(--ink-soft);line-height:1.45}
@@ -192,8 +192,8 @@
 .cz-title em.gold{color:var(--shu)}
 .cz-title em.uline.gold::after{background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%2024'%20preserveAspectRatio='none'%3E%3Cdefs%3E%3Cfilter%20id='b'%20x='-4%25'%20y='-40%25'%20width='108%25'%20height='180%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.018%200.82'%20numOctaves='2'%20seed='9'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='4.5'/%3E%3C/filter%3E%3C/defs%3E%3Cpath%20d='M6,14%20C38,6%2066,17%20102,11%20C138,5%20172,16%20214,9%20C190,17%20150,11%20112,16%20C78,20%2042,12%206,16%20Z'%20fill='%23FFB22E'%20filter='url(%23b)'/%3E%3C/svg%3E") no-repeat center/100% 100%}
 /* #3 背景をフッター以外 paper に統一 */
-.cz-hero{background:var(--paper)}
-.cta-band.cz-cta-band{background:var(--paper)}
+.cz-hero{background:var(--paper-2)}
+.cta-band.cz-cta-band{background:var(--paper-2)}
 </style>
 </head>
 <body>
@@ -339,6 +339,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260605u"></script>
+<script src="app.js?v=20260605v"></script>
 </body>
 </html>
