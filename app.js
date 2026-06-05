@@ -6,6 +6,17 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
 
+  /* ---- 背景の固定透かし「KOREKAI」（スクロールしても常に背景に透ける） ---- */
+  (function () {
+    var w = document.createElement("div");
+    w.className = "bg-watermark";
+    w.setAttribute("aria-hidden", "true");
+    var s = document.createElement("span");
+    s.textContent = "KOREKAI";
+    w.appendChild(s);
+    document.body.insertBefore(w, document.body.firstChild);
+  })();
+
   /* ---- notice bar（あんずフェア告知 / 全ページ注入・×で閉じ記憶） ---- */
   (function () {
     var closed = false;

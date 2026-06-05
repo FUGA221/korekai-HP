@@ -352,3 +352,10 @@ body.menu-open .hdr__cta{visibility:hidden}
 
 /* ===== 統計(4.3%)を中央寄せ（左偏り解消）===== */
 .stat{justify-content:center;max-width:900px;margin:0 auto}
+
+/* ===== 背景固定透かし「KOREKAI」＋ セクション透明化（透けさせる）2026-06-05 ===== */
+.bg-watermark{position:fixed;inset:0;z-index:-1;display:grid;place-items:center;pointer-events:none;overflow:hidden}
+.bg-watermark span{font-family:var(--f-lat);font-weight:900;font-size:clamp(90px,15vw,250px);letter-spacing:.04em;line-height:1;white-space:nowrap;color:#22324f;opacity:.07;transform:rotate(-7deg);user-select:none}
+@media (prefers-reduced-motion:reduce){.bg-watermark span{transform:rotate(-7deg)}}
+/* セクションの地を透明にして固定透かしを背面に透けさせる（bodyのpaper-2が地） */
+.sec--paper2,.cta-band,.phead,.sec--wine,.sec--ink{background:transparent}

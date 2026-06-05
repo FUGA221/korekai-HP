@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap">
 <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png"><link rel="icon" sizes="any" href="/img/logo-circle.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=20260606b">
+<link rel="stylesheet" href="style.css?v=20260606c">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -194,6 +194,13 @@
 /* #3 背景をフッター以外 paper に統一 */
 .cz-hero{background:var(--paper-2)}
 .cta-band.cz-cta-band{background:var(--paper-2)}
+
+/* 背景固定透かしを活かすためホームのセクション地も透明化＋旧擬似透かし撤去（2026-06-05） */
+.cz-hero{background:transparent}
+.cz-slope{background:transparent}
+.cta-band.cz-cta-band{background:transparent}
+.cz-slope::before{display:none}
+.cz-hero::before{display:none}
 </style>
 </head>
 <body>
@@ -339,6 +346,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260606b"></script>
+<script src="app.js?v=20260606c"></script>
 </body>
 </html>
