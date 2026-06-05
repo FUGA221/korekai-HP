@@ -303,12 +303,8 @@ body.menu-open .hdr__cta{visibility:hidden}
 .brand__mark{height:42px;width:42px;border-radius:50%;object-fit:contain;display:block;transform:none;background:none;box-shadow:none}
 @media(max-width:600px){.brand__mark{height:38px;width:38px}}
 
-/* フッターInstagramを右下に独立配置（PC：絶対配置／SP：通常フロー） */
-.ft .wrap{position:relative}
-.ft__social{margin-top:18px}
-@media(min-width:781px){
-  .ft__social{position:absolute;right:0;bottom:0;margin-top:0}
-}
+/* フッターInstagram：Menu列の「お問い合わせ」の下（gmailの高さあたり）に配置 */
+.ft__col .ft__social{margin-top:clamp(26px,4.5vw,42px)}
 
 /* ===== 日本語の不自然な改行を抑制（禁則＝行頭の、。回避／孤立末尾回避）2026-06-05 ===== */
 .lead,.cz-lead,.eyebrow,.eyebrow .jp,main p,main dd,main li,
