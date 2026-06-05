@@ -16,9 +16,9 @@
 <meta name="theme-color" content="#FAF3E8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=20260604k">
+<link rel="stylesheet" href="style.css?v=20260605m">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -31,6 +31,9 @@
 
 /* メニューはヘッダーの埋め込み「☰ Menu」ボタンに統一（旧・円形フローティングMENUは撤去） */
 
+.note-hand{font-family:"Yomogi",var(--f-body);font-weight:400;color:var(--shu);line-height:1.5;display:inline-block;transform:rotate(-2deg)}
+.cz-touch__cta .btn--oninK.ghost{color:var(--ink);border-color:var(--ink-soft)}
+.cz-touch__cta .btn--oninK.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .cz-eyebrow{margin-bottom:clamp(16px,2.2vw,24px)}
 .cz-eyebrow .seal{font-size:17px;margin-right:4px}
 
@@ -65,38 +68,38 @@
 @media (prefers-reduced-motion:reduce){.cz-blob{animation:none}}
 
 /* 差し色バンド（斜めの面・朱→金） */
-.cz-slope{position:relative;background:linear-gradient(100deg,var(--shu) 0%,var(--shu-bright) 58%,var(--gold) 132%);color:#fff;padding:clamp(46px,6vw,78px) 0;overflow:hidden;clip-path:polygon(0 4%,100% 0,100% 96%,0 100%)}
-.cz-slope::before{content:"KOREKAI";position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-lat);font-weight:900;font-size:clamp(90px,20vw,300px);line-height:1;color:rgba(255,255,255,.08);letter-spacing:.02em;pointer-events:none;white-space:nowrap}
+.cz-slope{position:relative;background:var(--paper);color:var(--ink);padding:clamp(62px,8vw,112px) 0;overflow:hidden}
+.cz-slope::before{content:"KOREKAI";position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-lat);font-weight:900;font-size:clamp(90px,20vw,300px);line-height:1;color:rgba(42,21,32,.035);letter-spacing:.02em;pointer-events:none;white-space:nowrap}
 .cz-slope__in{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
-.cz-slope__lead{font-family:var(--f-disp);font-weight:800;font-size:clamp(22px,3.2vw,38px);line-height:1.42;color:#fff;word-break:keep-all;overflow-wrap:anywhere}
-.cz-slope__lead em{font-style:normal;color:var(--ink)}
-.cz-slope__sub{margin-top:18px;color:rgba(255,255,255,.88);font-size:14.5px;line-height:1.95;max-width:42em;word-break:keep-all;overflow-wrap:anywhere}
-.cz-3{display:grid;gap:1px;background:rgba(255,255,255,.28);border-radius:var(--r);overflow:hidden}
-.cz-3 .it{padding:20px 22px}
-.cz-3 .it .k{display:flex;align-items:center;gap:11px;font-family:var(--f-disp);font-weight:800;font-size:17px;color:#fff}
+.cz-slope__lead{font-family:var(--f-disp);font-weight:800;font-size:clamp(22px,3.2vw,38px);line-height:1.42;color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
+.cz-slope__lead em{font-style:normal;color:var(--shu)}
+.cz-slope__sub{margin-top:18px;color:var(--ink-soft);font-size:14.5px;line-height:1.95;max-width:42em;word-break:keep-all;overflow-wrap:anywhere}
+.cz-3{display:grid;gap:12px}
+.cz-3 .it{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.cz-3 .it .k{display:flex;align-items:center;gap:11px;font-family:var(--f-disp);font-weight:800;font-size:17px;color:var(--ink)}
 .cz-3 .it .k .b{font-family:var(--f-disp);font-weight:800;font-size:15px;color:var(--ink);background:var(--gold);width:1.9em;height:1.9em;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
-.cz-3 .it p{margin-top:10px;font-size:13px;color:rgba(255,255,255,.85);line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
+.cz-3 .it p{margin-top:10px;font-size:13px;color:var(--ink-soft);line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
 
 /* 最初の都市接点（メッセージ主導／EC化率は補足ノート扱い・wine） */
 .cz-touch{display:block}
 .cz-touch__top{display:grid;grid-template-columns:1.55fr .9fr;gap:clamp(26px,4vw,54px);align-items:start}
-.cz-touch__lead p{color:rgba(255,255,255,.9);font-size:clamp(14.5px,1.6vw,16px);line-height:1.98;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__lead p{color:var(--ink-soft);font-size:clamp(14.5px,1.6vw,16px);line-height:1.98;word-break:keep-all;line-break:strict;overflow-wrap:normal}
 .cz-touch__lead p+p{margin-top:16px}
-.cz-touch__key{margin-top:24px;padding-left:18px;border-left:3px solid var(--gold);font-family:var(--f-disp);font-weight:800;font-size:clamp(16px,1.95vw,20px);line-height:1.72;color:#fff!important;word-break:keep-all;line-break:strict;overflow-wrap:normal}
-.cz-touch__key em{font-style:normal;color:var(--gold)}
-.cz-touch__note{align-self:start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:clamp(18px,2.4vw,24px)}
+.cz-touch__key{margin-top:24px;padding-left:18px;border-left:3px solid var(--gold);font-family:var(--f-disp);font-weight:800;font-size:clamp(16px,1.95vw,20px);line-height:1.72;color:var(--ink)!important;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__key em{font-style:normal;color:var(--wine)}
+.cz-touch__note{align-self:start;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.4vw,24px)}
 .cz-touch__data{display:flex;align-items:baseline;gap:11px;margin-bottom:12px}
-.cz-touch__data b{font-family:var(--f-lat);font-weight:900;font-size:clamp(34px,4.4vw,46px);color:var(--gold);line-height:.9}
-.cz-touch__data span{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.45}
-.cz-touch__note p{color:rgba(255,255,255,.76);font-size:12.5px;line-height:1.85;word-break:keep-all;line-break:strict;overflow-wrap:normal}
-.cz-touch__note .src{margin-top:12px;font-family:var(--f-lat);font-size:10.5px;color:rgba(255,255,255,.5);letter-spacing:.02em}
+.cz-touch__data b{font-family:var(--f-lat);font-weight:900;font-size:clamp(34px,4.4vw,46px);color:var(--shu);line-height:.9}
+.cz-touch__data span{font-size:11.5px;color:var(--ink-soft);line-height:1.45}
+.cz-touch__note p{color:var(--ink-soft);font-size:12.5px;line-height:1.85;word-break:keep-all;line-break:strict;overflow-wrap:normal}
+.cz-touch__note .src{margin-top:12px;font-family:var(--f-lat);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
 .cz-touch__cta{margin-top:clamp(22px,3vw,30px)}
 /* 3カード図解：出会う/聞く/返す */
 .touch3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.7vw,20px);margin-top:clamp(24px,3.2vw,34px)}
-.touch3 .c{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:clamp(20px,2.3vw,26px)}
+.touch3 .c{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.3vw,26px);box-shadow:var(--shadow)}
 .touch3 .c .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--f-lat);font-weight:900;font-size:14px;margin-bottom:13px}
-.touch3 .c h3{font-family:var(--f-disp);font-weight:800;font-size:clamp(17px,1.9vw,20px);color:#fff;margin-bottom:9px}
-.touch3 .c p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.82;word-break:keep-all;line-break:strict}
+.touch3 .c h3{font-family:var(--f-disp);font-weight:800;font-size:clamp(17px,1.9vw,20px);color:var(--ink);margin-bottom:9px}
+.touch3 .c p{font-size:13px;color:var(--ink-soft);line-height:1.82;word-break:keep-all;line-break:strict}
 
 /* 入口ピル */
 .cz-doors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(26px,3.4vw,40px)}
@@ -199,7 +202,7 @@
 <section class="cz-slope">
   <div class="wrap cz-slope__in">
     <div class="rv">
-      <span class="eyebrow" style="color:var(--ink)"><span style="color:var(--ink)">What we do</span> <span class="jp" style="color:rgba(42,21,32,.66)">／ 私たちがすること</span></span>
+      <span class="eyebrow">What we do <span class="jp">／ 私たちがすること</span></span>
       <p class="cz-slope__lead">ただ売るだけじゃない。<em>地域ごと</em>、応援する。</p>
       <p class="cz-slope__sub">地方の逸品を都市へ届け、イベントや発信で知名度を広げ、若い世代を巻き込んで地域を盛り上げます。「どう売れるか」のテストマーケやデータ分析も、つくり手を支えるための手段のひとつです。</p>
     </div>
@@ -212,16 +215,16 @@
 </section>
 
 <!-- ③ 最初の都市接点（EC化率は主張の中心でなく補足ノート扱い） -->
-<section class="sec sec--wine">
+<section class="sec">
   <div class="wrap">
-    <div class="sec__head rv">
+    <div class="sec__head rv" style="max-width:none">
       <span class="eyebrow">First Touch <span class="jp">／ 最初の都市接点</span></span>
-      <h2 class="h-sec">&ldquo;ECに出す&rdquo;だけでは、<br>まだ届かない。</h2>
+      <h2 class="h-sec h-sec--1line">&#8220;ECに出す&#8221;だけでは、まだ届かない。</h2>
     </div>
     <div class="cz-touch rv d1">
       <div class="cz-touch__top">
         <div class="cz-touch__lead">
-          <p>地方には、まだ都市に知られていない&ldquo;いいもの&rdquo;がたくさんあります。ECに出す、SNSで発信する——それだけで選ばれる時代ではありません。だから私たちは、都市のリアルな場で<strong style="color:#fff;font-weight:700">出会いをつくります</strong>。</p>
+          <p>地方には、まだ都市に知られていない&ldquo;いいもの&rdquo;がたくさんあります。ECに出す、SNSで発信する——それだけで選ばれる時代ではありません。だから私たちは、都市のリアルな場で<strong style="color:var(--ink);font-weight:700">出会いをつくります</strong>。</p>
           <p class="cz-touch__key">コレ買い！は、ECの代わりではなく、ECや継続販売につながる<em>&ldquo;最初の都市接点&rdquo;</em>をつくる活動です。</p>
         </div>
         <aside class="cz-touch__note">
@@ -273,6 +276,7 @@
 <!-- ④ CTA band -->
 <section class="cta-band cz-cta-band">
   <div class="wrap">
+    <span class="note-hand rv">一緒に、次の一歩。</span>
     <h2 class="rv"><span class="ln">あなたの地域の&ldquo;いいもの&rdquo;を、</span><span class="ln"><em>都市へ</em>。</span></h2>
     <div class="cz-cta rv d1" style="justify-content:center">
       <a href="contact.html" class="btn btn--oninK">お問い合わせ <span class="arw" aria-hidden="true">→</span></a>
@@ -296,6 +300,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260604k"></script>
+<script src="app.js?v=20260605m"></script>
 </body>
 </html>
