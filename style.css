@@ -257,3 +257,44 @@ body{line-height:1.72}
   .stepr{gap:16px;padding:18px 0}
   .door{padding:20px 20px 18px;min-height:0}
 }
+
+/* ============================================================
+   2026-06-05 全ページ白統一 ＋ メニュー重複修正 ＋ イラスト過大(PC)修正 ＋ 新ロゴ
+   ============================================================ */
+
+/* --- メニュー開時：デスクトップのヘッダーナビ/CTAを隠して重複解消 --- */
+body.menu-open .hdr .nav,
+body.menu-open .hdr__cta{visibility:hidden}
+
+/* --- イラスト(gframe)がPCで大きすぎ：最大幅を制限（スマホは現状維持） --- */
+.gframe{max-width:720px;margin-left:auto;margin-right:auto}
+
+/* --- 新ロゴ（ヘッダーのブランドマーク。カート＋オービット） --- */
+.brand__mark{height:34px;width:auto;object-fit:contain;display:block;transform:none;background:none;box-shadow:none}
+
+/* --- 白統一：sec--wine / sec--ink を明色へ、内部テキストをinkへ --- */
+.sec--wine,.sec--ink{background:var(--paper);color:var(--ink)}
+.sec--wine h1,.sec--wine h2,.sec--wine h3,.sec--ink h1,.sec--ink h2,.sec--ink h3{color:var(--ink)}
+.sec--wine .lead,.sec--ink .lead{color:var(--ink-soft)}
+.sec--wine .eyebrow,.sec--ink .eyebrow{color:var(--shu)}
+.sec--wine .eyebrow::before,.sec--ink .eyebrow::before{background:var(--shu)}
+.sec--wine .eyebrow .jp,.sec--ink .eyebrow .jp{color:var(--ink-soft)}
+.sec--wine .vlist,.sec--ink .vlist{background:transparent;gap:14px}
+.sec--ink .vitem,.sec--wine .vitem{background:var(--white);border:1px solid var(--line)}
+.sec--ink .vitem .k,.sec--wine .vitem .k{color:var(--ink)}
+.sec--ink .vitem p,.sec--wine .vitem p{color:var(--ink-soft)}
+.sec--wine .stat__num,.sec--wine .stat__unit,.sec--ink .stat__num,.sec--ink .stat__unit{color:var(--shu)}
+.sec--wine .stat .t,.sec--ink .stat .t{color:var(--ink)}
+.sec--wine .stat .d,.sec--ink .stat .d,.sec--wine .stat .src,.sec--ink .stat .src{color:var(--ink-soft)}
+.sec--ink .callout,.sec--wine .callout{background:var(--paper-2)!important;border-color:var(--line)!important;border-left-color:var(--gold)!important;color:var(--ink-soft)!important}
+.sec--ink .callout b,.sec--wine .callout b{color:var(--ink)!important}
+.sec--ink .callout .seal,.sec--wine .callout .seal{background:var(--gold);color:var(--ink)}
+.sec--ink .btn--oninK.ghost,.sec--wine .btn--oninK.ghost{color:var(--ink);border-color:var(--ink-soft)}
+.sec--ink .btn--oninK.ghost:hover,.sec--wine .btn--oninK.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* --- 白統一：CTAバンドを明色へ（全ページ共通） --- */
+.cta-band{background:var(--paper-2);color:var(--ink)}
+.cta-band h2{color:var(--ink)}
+.cta-band h2 em{color:var(--shu)}
+.cta-band .btn--oninK.ghost{color:var(--ink);border-color:var(--ink-soft)}
+.cta-band .btn--oninK.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
