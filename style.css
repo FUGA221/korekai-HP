@@ -306,10 +306,12 @@ body.menu-open .hdr__cta{visibility:hidden}
 /* フッターInstagram：Menu列の「お問い合わせ」の下（gmailの高さあたり）に配置 */
 .ft__col .ft__social{margin-top:clamp(26px,4.5vw,42px)}
 
-/* ===== 日本語の不自然な改行を抑制（禁則＝行頭の、。回避／孤立末尾回避）2026-06-05 ===== */
+/* ===== 日本語の不自然な改行を抑制（語中分断を止める／禁則／孤立回避）2026-06-05 ===== */
+/* word-break:keep-all＝文字間で割らない（語中分断防止）／overflow-wrap:anywhere＝はみ出し時のみ救済 */
 .lead,.cz-lead,.eyebrow,.eyebrow .jp,main p,main dd,main li,
-.vitem p,.svc3 .card>p,.touch3 .c p,.cz-3 .it p,.stepr p,.callout p,.cz-touch__lead p{
-  line-break:strict;text-wrap:pretty;overflow-wrap:normal;
+.vitem p,.svc3 .card>p,.touch3 .c p,.cz-3 .it p,.stepr p,.callout p,.callout span,
+.svc-sub p,.pflow .step p,.cz-touch__lead p,.cz-touch__key,.cz-slope__sub,.stat__cap .d{
+  word-break:keep-all;overflow-wrap:anywhere;line-break:strict;text-wrap:pretty;
 }
 
 /* eyebrowの日本語ラベルを塊で折り返す（…検証/販売 等の孤立を防ぐ） */
@@ -359,3 +361,18 @@ body.menu-open .hdr__cta{visibility:hidden}
 @media (prefers-reduced-motion:reduce){.bg-watermark span{transform:rotate(-7deg)}}
 /* セクションの地を透明にして固定透かしを背面に透けさせる（bodyのpaper-2が地） */
 .sec--paper2,.cta-band,.phead,.sec--wine,.sec--ink{background:transparent}
+
+/* ===== シニア可読性：本文を全体的に拡大（ターゲット=生産者50代以上）2026-06-06 ===== */
+body{font-size:16.5px}
+.lead{font-size:clamp(16.5px,1.6vw,18.5px);line-height:1.85}
+.touch3 .c p,.svc3 .card>p,.cz-3 .it p,.stepr p,.vitem p,.svc-sub p,.pflow .step p,.callout p,.callout span,.evcard p{font-size:15.5px;line-height:1.85}
+.stat__cap .d{font-size:15.5px}
+.newsrow__ttl,.cz-news__ttl{font-size:16px}
+.svc-sub h4,.evcta__t .sub{font-size:14px}
+@media(max-width:600px){
+  body{font-size:16px}
+  .lead{font-size:16.5px}
+  .touch3 .c p,.svc3 .card>p,.cz-3 .it p,.stepr p,.vitem p,.svc-sub p,.pflow .step p,.callout p,.callout span{font-size:15px}
+}
+
+.nw{white-space:nowrap}

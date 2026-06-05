@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap">
 <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png"><link rel="icon" sizes="any" href="/img/logo-circle.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=20260606i">
+<link rel="stylesheet" href="style.css?v=20260606s">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -202,6 +202,13 @@
 .cz-slope::before{display:none}
 .cz-hero::before{display:none}
 .nbk{white-space:nowrap}
+
+/* シニア可読性：ホームの本文も拡大（2026-06-06） */
+.cz-lead{font-size:clamp(16px,1.3vw,18px);line-height:1.9}
+.cz-touch__lead p{font-size:clamp(16px,1.5vw,18px);line-height:1.92}
+.cz-3 .it p{font-size:15px}
+.cz-slope__sub{font-size:15.5px}
+@media(max-width:600px){.cz-lead{font-size:16px}}
 </style>
 </head>
 <body>
@@ -251,7 +258,7 @@
     <div class="rv">
       <span class="eyebrow">What we do <span class="jp">／ 私たちがすること</span></span>
       <p class="cz-slope__lead">ただ売るだけじゃない。<em>地域ごと</em>、応援する。</p>
-      <p class="cz-slope__sub">地方の逸品を都市へ届け、イベントや発信で知名度を広げ、若い世代を巻き込んで地域を盛り上げます。「どう売れるか」のテストマーケやデータ分析も、つくり手を支えるための手段のひとつです。</p>
+      <p class="cz-slope__sub">地方の逸品を都市へ届け、イベントや発信で知名度を広げ、若い世代を巻き込んで地域を盛り上げます。<span class="nw">「どう売れるか」のテストマーケやデータ分析も、</span>つくり手を支えるための手段のひとつです。</p>
     </div>
     <div class="cz-3 rv d1">
       <div class="it"><div class="k"><span class="b">流</span>都市へ届ける</div><p>地方に眠る逸品を、首都圏の現場・イベントへ流通させる。</p></div>
@@ -272,7 +279,7 @@
       <div class="cz-touch__top">
         <div class="cz-touch__lead">
           <p>地方には、まだ都市に知られていない&ldquo;いいもの&rdquo;がたくさんあります。ECに出す、SNSで発信する——それだけで選ばれる時代ではありません。だから私たちは、都市のリアルな場で<strong style="color:var(--ink);font-weight:700">出会いをつくります</strong>。</p>
-          <p class="cz-touch__key">コレ買い！は、ECの代わりではなく、ECや継続販売につながる<em>&ldquo;最初の都市接点&rdquo;</em>をつくる活動です。</p>
+          <p class="cz-touch__key">コレ買い！は、ECの代わりではなく、ECや継続販売につながる<span class="nw"><em>&ldquo;最初の都市接点&rdquo;</em>を</span>つくる活動です。</p>
         </div>
         <aside class="cz-touch__note">
           <p class="cz-touch__data"><b>4%台</b><span>食品・飲料・酒類の<br>EC化率（2023年）</span></p>
@@ -347,6 +354,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260606i"></script>
+<script src="app.js?v=20260606s"></script>
 </body>
 </html>

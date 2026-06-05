@@ -17,6 +17,29 @@
     document.body.insertBefore(w, document.body.firstChild);
   })();
 
+  /* ---- BudouX：日本語を文節境界で改行（不自然な改行＝語中分断・行頭助詞・行頭禁則を防ぐ） ---- */
+  (function () {
+    var SEL = ".lead,.cz-lead,main p,main dd,main li,.touch3 .c p,.svc3 .card>p," +
+      ".cz-3 .it p,.stepr p,.vitem p,.svc-sub p,.pflow .step p,.callout p,.callout span," +
+      ".stat__cap .t,.stat__cap .d,.cz-touch__lead p,.cz-touch__key,.cz-slope__sub,.evcard p,.evcta__t";
+    try {
+      import("https://unpkg.com/budoux@0.6.4/module/index.js").then(function (m) {
+        var parser = m.loadDefaultJapaneseParser();
+        document.querySelectorAll(SEL).forEach(function (el) {
+          try {
+            parser.applyElement(el);
+            // 補正：閉じ引用符/括弧の直後では割らない（助詞の孤立防止）＋ブランド語「いいもの」は結合
+            var Z = String.fromCharCode(0x200B), WJ = String.fromCharCode(0x2060);
+            el.innerHTML = el.innerHTML
+              .replace(new RegExp(Z + "?([“”「」『』（）])" + Z + "?", "g"), "$1")
+              .replace(new RegExp("([”」』）！])([をにはがのへとも])", "g"), "$1" + WJ + "$2")
+              .replace(new RegExp("いい" + Z + "もの", "g"), "いいもの");
+          } catch (e) {}
+        });
+      }).catch(function () {}); // 失敗時はCSSのword-break:keep-allにフォールバック
+    } catch (e) {}
+  })();
+
   /* ---- notice bar（あんずフェア告知 / 全ページ注入・×で閉じ記憶） ---- */
   (function () {
     var closed = false;
