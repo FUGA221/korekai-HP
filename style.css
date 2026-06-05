@@ -333,3 +333,26 @@ body.menu-open .hdr__cta{visibility:hidden}
   .pflow .arr{transform:rotate(90deg);padding:3px 0}
   .pflow .step{padding:20px}
 }
+
+/* ===== ステップを左右交互タイムラインに（左偏り解消・全幅活用）2026-06-05 ===== */
+.steps{display:block;position:relative;max-width:1040px;margin:0 auto}
+.steps::before{content:"";position:absolute;left:50%;top:30px;bottom:30px;width:2px;background:linear-gradient(180deg,var(--gold),var(--line));transform:translateX(-50%);z-index:0}
+.stepr{display:block;position:relative;border-top:0;padding:clamp(14px,2vw,24px) 0;grid-template-columns:none}
+.stepr__n{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:66px;height:66px;border-radius:50%;background:var(--white);border:2px solid var(--gold);box-shadow:0 8px 18px -8px rgba(255,178,46,.75);display:grid;place-items:center;font-family:var(--f-lat);font-weight:900;font-size:22px;color:var(--shu);line-height:1}
+.stepr > div:last-child{position:relative;z-index:1;width:calc(50% - 56px);box-sizing:border-box;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.4vw,28px);box-shadow:var(--shadow);text-align:left}
+.stepr:nth-child(odd) > div:last-child{margin-left:0;margin-right:auto}
+.stepr:nth-child(even) > div:last-child{margin-left:auto;margin-right:0}
+.stepr h3{font-size:clamp(18px,2vw,22px);margin:6px 0 10px}
+.stepr p{max-width:none;font-size:14px;line-height:1.85}
+
+/* スマホ：左レール式タイムライン（番号は左の線上・カードは右） */
+@media(max-width:760px){
+  .steps{max-width:none}
+  .steps::before{left:25px;top:18px;bottom:18px}
+  .stepr{padding:0 0 18px 0}
+  .stepr__n{left:25px;top:30px;transform:translateX(-50%);width:50px;height:50px;font-size:17px}
+  .stepr > div:last-child{width:auto;margin-left:56px!important;margin-right:0;padding:18px 18px}
+}
+
+/* ===== 統計(4.3%)を中央寄せ（左偏り解消）===== */
+.stat{justify-content:center;max-width:900px;margin:0 auto}
