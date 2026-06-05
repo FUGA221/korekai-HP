@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=20260605m">
+<link rel="stylesheet" href="style.css?v=20260605o">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -128,6 +128,23 @@
 }
 @media(max-width:560px){
   .cz-tape span{font-size:13px}
+}
+
+/* 密度最適化（ホーム固有・2026-06-05） */
+.cz-slope{padding:clamp(44px,5.5vw,74px) 0}
+.cz-hero__in{padding:clamp(24px,3.2vw,44px) var(--gut) clamp(32px,4.2vw,56px)}
+.cz-title{font-size:clamp(28px,5.4vw,60px);line-height:1.18;margin-bottom:clamp(18px,2.4vw,30px)}
+@media(max-width:600px){
+  .cz-title{font-size:31px;line-height:1.2;margin-bottom:16px}
+  .cz-slope{padding:32px 0}
+  .cz-hero__in{padding:16px var(--gut) 24px}
+  .touch3 .c{padding:15px 17px}
+  .cz-3 .it{padding:14px 16px}
+  .cz-tape span{font-size:12px;padding:7px 12px}
+  .cz-eyebrow{margin-bottom:12px;font-size:11px}
+  .cz-blob{width:min(56%,196px)}
+  .cz-split{gap:16px}
+  .cz-lead{font-size:14.5px;line-height:1.75}
 }
 </style>
 </head>
@@ -291,7 +308,7 @@
 <div class="wrap">
 <div class="ft__top">
 <div class="ft__brand"><div class="row"><span class="brand__seal">買</span><span class="nm">コレ買い<span class="ex">！</span></span></div><p class="mi">地方の&ldquo;いいもの&rdquo;を、都市へ。つくり手を、応援する。</p>
-<dl class="ft__entity"><dt>団体</dt><dd>複数大学の学生による団体（2026.01発足）</dd><dt>代表</dt><dd>野口 拓朗（慶應義塾大学）</dd><dt>拠点</dt><dd>慶應義塾大学 日吉キャンパス</dd><dt>連絡</dt><dd><a href="mailto:fuga.n.0201@gmail.com">fuga.n.0201@gmail.com</a></dd></dl></div>
+<dl class="ft__entity"><dt>団体</dt><dd>複数大学の学生による団体（2026.01発足）</dd><dt>代表</dt><dd>野口 拓朗（慶應義塾大学）</dd><dt>拠点</dt><dd>慶應義塾大学 日吉キャンパス</dd><dt>連絡</dt><dd><a href="mailto:fuga.n.0201@gmail.com">fuga.n.0201@gmail.com</a></dd></dl><div class="ft__social"><a href="https://www.instagram.com/korekai_2615/" target="_blank" rel="noopener" aria-label="コレ買い！ Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.04.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.19-1.39-.32-1.71-.17-.43-.37-.74-.69-1.06-.32-.32-.63-.52-1.06-.69-.32-.13-.81-.28-1.71-.32-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 100 10.92 5.46 5.46 0 000-10.92zm0 9a3.54 3.54 0 110-7.08 3.54 3.54 0 010 7.08zm6.95-9.22a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg><span>@korekai_2615</span></a></div></div>
 <nav class="ft__col"><h4>コレ買い！について</h4><a href="method.html">仕組み詳細</a><a href="about.html">メンバー紹介</a><a href="testmarket.html">検証販売について</a><a href="support.html">支援内容の詳細</a></nav>
 <nav class="ft__col"><h4>Menu</h4><a href="products.html">取扱事例</a><a href="events.html">イベント</a><a href="producers.html">生産者の方へ</a><a href="contact.html">お問い合わせ</a></nav>
 </div>
@@ -300,6 +317,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260605m"></script>
+<script src="app.js?v=20260605o"></script>
 </body>
 </html>
