@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap">
-<link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png"><link rel="icon" sizes="any" href="/img/mark.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=20260605p">
+<link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png"><link rel="icon" sizes="any" href="/img/logo-circle.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css?v=20260605q">
 <style>
 /* =====================================================================
    HOME — Concept C（攻めリデザイン）＋ 2026-06-03 訂正
@@ -146,12 +146,52 @@
   .cz-split{gap:16px}
   .cz-lead{font-size:14.5px;line-height:1.75}
 }
+
+/* ===== ヒーロー：PCファーストビュー完結レイアウト（2026-06-05 ラフ準拠） ===== */
+.cz-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%);min-height:calc(100vh - 118px);display:flex;flex-direction:column;padding:0}
+.cz-hero::before{content:"買";position:absolute;z-index:0;pointer-events:none;right:-.16em;top:-.2em;font-family:var(--f-disp);font-weight:800;font-size:clamp(240px,38vw,560px);line-height:.8;color:rgba(42,21,32,.045);transform:rotate(-6deg)}
+.cz-hero__in{position:relative;z-index:1;flex:1;display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(26px,4vw,64px);align-items:center;padding-top:clamp(16px,3vh,38px);padding-bottom:clamp(10px,2vh,22px)}
+.cz-hero__copy{min-width:0}
+.cz-eyebrow{margin-bottom:14px}
+.cz-title{font-family:var(--f-disp);font-weight:800;color:var(--ink);font-size:clamp(33px,4.5vw,55px);line-height:1.14;letter-spacing:.005em;margin:0;word-break:keep-all}
+.cz-title .ln{display:block;white-space:nowrap}
+.cz-title .l2{margin-left:1.2em}
+.cz-title em{font-style:normal;color:var(--ink);position:relative;display:inline-block}
+.cz-title em.uline::after{content:"";position:absolute;left:-.02em;right:-.02em;bottom:.02em;height:.13em;background:var(--shu);border-radius:6px;transform-origin:left center}
+@media (prefers-reduced-motion:no-preference){.cz-title em.uline::after{animation:czhl .8s var(--ease) .5s both}}
+.cz-lead{margin-top:clamp(16px,2.3vh,24px);font-size:clamp(15px,1.05vw,16.5px);line-height:1.9;color:var(--ink-soft);max-width:27em;word-break:keep-all;line-break:strict}
+.cz-cta{margin-top:clamp(18px,2.5vh,28px);display:flex;gap:14px;flex-wrap:wrap}
+.cz-cta .btn{padding:15px 26px;font-size:14.5px}
+.cz-hero__visual{position:relative;justify-self:center;width:100%}
+.cz-hero__visual img{display:block;width:100%;max-width:640px;height:auto;margin:0 auto;max-height:min(56vh,536px);object-fit:contain;filter:drop-shadow(0 26px 44px rgba(42,21,32,.2))}
+.cz-hero__hand{position:absolute;right:3%;bottom:7%;font-family:"Yomogi",var(--f-body);color:var(--shu);font-size:clamp(12px,1vw,15px);line-height:1.4;text-align:center;transform:rotate(-3deg);background:rgba(250,243,232,.82);padding:5px 11px;border-radius:10px;box-shadow:0 6px 16px -8px rgba(42,21,32,.3)}
+.cz-news{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);width:calc(100% - 2*var(--gut));max-width:var(--max);margin:0 auto clamp(14px,2.2vh,24px);background:var(--white);border:1px solid var(--line);border-radius:14px;padding:13px clamp(16px,2vw,22px);box-shadow:0 14px 34px -22px rgba(42,21,32,.4);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.cz-news:hover{transform:translateY(-2px);box-shadow:0 18px 40px -20px rgba(42,21,32,.45)}
+.cz-news__tag{font-family:var(--f-lat);font-size:10px;font-weight:700;letter-spacing:.12em;background:var(--shu);color:#fff;padding:4px 11px;border-radius:100px;flex-shrink:0}
+.cz-news__date{font-family:var(--f-lat);font-weight:600;font-size:12.5px;color:var(--ink-soft);flex-shrink:0}
+.cz-news__ttl{flex:1;font-family:var(--f-disp);font-weight:700;font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.5;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cz-news__go{flex-shrink:0;font-family:var(--f-body);font-weight:700;font-size:13px;color:var(--shu);white-space:nowrap}
+@media(max-width:980px){
+  .cz-hero{min-height:0}
+  .cz-hero__in{grid-template-columns:1fr;gap:6px;padding-top:24px;padding-bottom:16px}
+  .cz-hero__visual{order:2;margin-top:16px}
+  .cz-hero__visual img{max-height:none;max-width:520px}
+  .cz-title .l2{margin-left:.4em}
+  .cz-news{flex-wrap:wrap;gap:7px 12px}
+  .cz-news__ttl{flex:1 1 100%;order:3;white-space:normal}
+}
+@media(max-width:600px){
+  .cz-title{font-size:clamp(30px,8.6vw,40px);line-height:1.17}
+  .cz-title .l2{margin-left:.3em}
+  .cz-lead{font-size:14.5px;line-height:1.78;max-width:none}
+  .cz-hero__hand{font-size:11.5px;right:4%;bottom:5%}
+}
 </style>
 </head>
 <body>
 <header class="hdr">
 <div class="wrap hdr__in">
-<a href="index.html" class="brand" aria-label="コレ買い！ ホーム"><img class="brand__mark" src="img/mark-h.png" alt="" aria-hidden="true"><span class="brand__name">コレ買い<span class="ex">！</span></span></a>
+<a href="index.html" class="brand" aria-label="コレ買い！ ホーム"><img class="brand__mark" src="img/logo-circle.png" alt="" aria-hidden="true"><span class="brand__name">コレ買い<span class="ex">！</span></span></a>
 <nav class="nav" aria-label="メインナビ"><a href="index.html" class="is-active">ホーム</a><span class="nav__has"><a href="about.html" class="nav__top">コレ買い！について <span class="caret" aria-hidden="true">▾</span></a><span class="nav__drop"><a href="method.html">仕組み詳細</a><a href="about.html">メンバー紹介</a><a href="testmarket.html">検証販売について</a><a href="support.html">支援内容の詳細</a></span></span><a href="products.html">取扱事例</a><a href="events.html">イベント</a><a href="producers.html">生産者の方へ</a></nav>
 <a href="contact.html" class="btn btn--shu hdr__cta">お問い合わせ</a>
 <button class="burger" id="burger" aria-label="メニュー" aria-expanded="false"><span class="burger__lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger__txt">Menu</span></button>
@@ -161,58 +201,32 @@
 
 <main>
 
-<!-- ① HERO — A案コピー / 全幅タイトル（文節改行）/ メインビジュアルplaceholder。メニューはヘッダーの埋め込みボタンに統一 -->
+<!-- ① HERO — PCファーストビュー完結（左:コピー＋CTA / 右:大ブロブイラスト / 下:NEWS） -->
 <section class="cz-hero">
   <div class="cz-hero__in wrap">
-    <span class="eyebrow cz-eyebrow"><span class="seal">買</span>For Local Makers <span class="jp">／ 地方のつくり手を応援する学生団体</span></span>
-    <h1 class="cz-title">
-      <span class="ln">地方の&ldquo;いいもの&rdquo;を、</span>
-      <span class="ln">都市へ<em>届ける</em>。</span>
-    </h1>
-    <div class="cz-split">
-      <div class="cz-hero__copy">
-        <p class="cz-lead"><span class="big">つくり手を応援し、地域を元気に。</span>地方には、いいものを作っているのに都市に届いていないつくり手がいます。私たちはその逸品を都市へ届け、イベントや発信で知名度を広げ、地域を盛り上げる学生団体です。</p>
-        <div class="cz-cta">
-          <a href="about.html" class="btn btn--shu">コレ買い！とは <span class="arw" aria-hidden="true">→</span></a>
-          <a href="products.html" class="btn btn--line">取扱事例を見る <span class="arw" aria-hidden="true">→</span></a>
-        </div>
-        <div class="cz-tape">
-          <span><span class="n">01</span> 地方の逸品を都市へ</span>
-          <span><span class="n">02</span> つくり手を応援</span>
-          <span><span class="n">03</span> イベントで地域を活性化</span>
-        </div>
-      </div>
-
-      <div class="cz-blobwrap rv d1">
-        <figure class="cz-blob">
-          <img src="img/scene-city-market.jpg" alt="都市のマルシェで、学生が地域のあんず加工品を対面で販売している様子" width="456" height="518" loading="eager">
-        </figure>
+    <div class="cz-hero__copy">
+      <span class="eyebrow cz-eyebrow"><span class="seal">買</span>For Local Makers <span class="jp">／ 地方のつくり手を応援する学生団体</span></span>
+      <h1 class="cz-title">
+        <span class="ln l1">地方の&ldquo;<em class="uline">いいもの</em>&rdquo;を</span>
+        <span class="ln l2">都市へ<em class="uline">届ける</em>。</span>
+      </h1>
+      <p class="cz-lead">学生が現場で売って、反応を集めて、つくり手に返す。コレ買い！は、地方の逸品を都市へ届け、地域と都市をつなぐ学生チームです。</p>
+      <div class="cz-cta">
+        <a href="producers.html" class="btn btn--shu">生産者・自治体の方へ <span class="arw" aria-hidden="true">→</span></a>
+        <a href="about.html" class="btn btn--line">私たちを知る <span class="arw" aria-hidden="true">→</span></a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ② 最新情報 -->
-<section class="news">
-  <div class="wrap news__in">
-    <div class="news__head rv">
-      <span class="eyebrow">News <span class="jp">／ 最新情報</span></span>
-    </div>
-    <div class="newslist rv d1">
-      <a class="newsrow" href="events.html">
-        <span class="newsrow__date">2026.6</span>
-        <span class="newsrow__tag">Event</span>
-        <span class="newsrow__ttl">あんず収穫インターン（6/20-21・6/27-28）参加者募集中</span>
-        <span class="newsrow__go" aria-hidden="true">→</span>
-      </a>
-      <a class="newsrow" href="events.html">
-        <span class="newsrow__date">2026.6.28</span>
-        <span class="newsrow__tag">Fair</span>
-        <span class="newsrow__ttl">ちくまあんずフェアに出展予定 ― 詳細は後日公開</span>
-        <span class="newsrow__go" aria-hidden="true">→</span>
-      </a>
+    <div class="cz-hero__visual rv d1">
+      <img src="img/hero-market.png" alt="都市のマルシェで、学生が地域のあんず加工品を客に手渡している様子" loading="eager" width="1370" height="928">
+      <span class="cz-hero__hand">出会いが、<br>地域の未来を育てる。</span>
     </div>
   </div>
+  <a class="cz-news" href="events.html" aria-label="最新情報を見る">
+    <span class="cz-news__tag">NEWS</span>
+    <span class="cz-news__date">2026.6</span>
+    <span class="cz-news__ttl">あんず収穫インターン（6/20-21・6/27-28）参加者募集中</span>
+    <span class="cz-news__go">お知らせ一覧 <span aria-hidden="true">→</span></span>
+  </a>
 </section>
 
 <!-- 私たちがすること（斜めの面・朱→金） -->
@@ -317,6 +331,6 @@
 </footer>
 
 <!-- メニュー開閉は app.js で統一管理 -->
-<script src="app.js?v=20260605p"></script>
+<script src="app.js?v=20260605q"></script>
 </body>
 </html>

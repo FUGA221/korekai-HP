@@ -298,3 +298,14 @@ body.menu-open .hdr__cta{visibility:hidden}
 .cta-band h2 em{color:var(--shu)}
 .cta-band .btn--oninK.ghost{color:var(--ink);border-color:var(--ink-soft)}
 .cta-band .btn--oninK.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* 円形ロゴ（ヘッダーのブランドマーク） */
+.brand__mark{height:42px;width:42px;border-radius:50%;object-fit:contain;display:block;transform:none;background:none;box-shadow:none}
+@media(max-width:600px){.brand__mark{height:38px;width:38px}}
+
+/* フッターInstagramを右下に独立配置（PC：絶対配置／SP：通常フロー） */
+.ft .wrap{position:relative}
+.ft__social{margin-top:18px}
+@media(min-width:781px){
+  .ft__social{position:absolute;right:0;bottom:0;margin-top:0}
+}
